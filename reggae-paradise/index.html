@@ -20,6 +20,21 @@
       padding: 24px;
     }
 
+    .back-link {
+      text-align: left;
+      margin-bottom: 12px;
+    }
+
+    .back-link a {
+      color: #9aa4ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
     h1 {
       font-size: 2.2rem;
       margin-bottom: 8px;
@@ -40,14 +55,14 @@
     .links {
       display: flex;
       justify-content: center;
-      gap: 32px;
+      gap: 28px;
       flex-wrap: wrap;
     }
 
     .link-card {
       background: #1a1a1a;
       border-radius: 14px;
-      padding: 18px 22px;
+      padding: 16px 22px;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -62,7 +77,8 @@
     }
 
     .link-card img {
-      height: 28px;
+      height: 26px;
+      width: auto;
     }
 
     footer {
@@ -75,6 +91,12 @@
 
 <body>
   <div class="container">
+
+    <!-- BACK LINK -->
+    <div class="back-link">
+      <a href="https://stepin360.net">← Back to StepIn360</a>
+    </div>
+
     <h1>Reggae Paradise</h1>
     <p>Explore the hostel in a full 360° virtual tour</p>
 
@@ -93,19 +115,19 @@
 
       <!-- Booking -->
       <a class="link-card" href="https://www.booking.com/Share-3BONFe" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.svg" alt="Booking">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.png" alt="Booking">
         <span>Book on Booking.com</span>
       </a>
 
-      <!-- Hostelworld (international) -->
+      <!-- Hostelworld (fixed) -->
       <a class="link-card" href="https://www.hostelworld.com/hosteldetails.php/Reggae-Paradise/325477" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hostelworld_logo.svg" alt="Hostelworld">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Hostelworld_logo.svg/512px-Hostelworld_logo.svg.png" alt="Hostelworld">
         <span>Book on Hostelworld</span>
       </a>
 
-      <!-- Google Maps -->
+      <!-- Google Maps (fixed) -->
       <a class="link-card" href="https://maps.app.goo.gl/x8LMPGWiFpMswJ1g7" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Google_Maps_Logo_2020.svg" alt="Google Maps">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Google_Maps_Logo_2020.svg/512px-Google_Maps_Logo_2020.svg.png" alt="Google Maps">
         <span>Open in Google Maps</span>
       </a>
 
