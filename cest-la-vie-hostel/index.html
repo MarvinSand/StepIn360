@@ -1,88 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>C’est la Vie Hostel – Virtual Tour | StepIn360</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta name="description" content="Explore C’est la Vie Hostel with a professional 360° virtual tour by StepIn360." />
+  <meta charset="UTF-8">
+  <title>C'est La Vie Hostel – Virtual Tour | StepIn360</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #0f1115;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f0f0f;
       color: #ffffff;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     header {
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #1f2230;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
     }
 
-    header a {
-      color: #7c8cff;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    h1 {
-      margin: 10px 0 4px;
-      font-size: 1.8rem;
-    }
-
-    p.subtitle {
-      color: #b0b3c2;
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .tour {
-      margin-top: 20px;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .info {
-      margin-top: 30px;
-      background: #171a21;
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-    }
-
-    .info h2 {
-      margin-bottom: 8px;
-    }
-
-    .info p {
-      color: #b0b3c2;
-      margin-bottom: 14px;
-    }
-
-    .info a {
-      display: inline-block;
-      padding: 12px 26px;
-      background: #5b6cff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
+    .logo {
+      font-size: 22px;
       font-weight: 600;
     }
 
-    footer {
+    nav a {
+      margin-left: 24px;
+      opacity: 0.8;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      padding: 18px 20px 30px;
       text-align: center;
-      color: #7a7f98;
-      font-size: 0.8rem;
-      margin: 30px 0;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    p.subtitle {
+      color: #b5b5b5;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .tour {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      margin: 20px auto 40px;
+      max-width: 900px;
+    }
+
+    iframe, .tour script {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .link-card {
+      background: #1a1a1a;
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .link-card:hover {
+      background: #242424;
+      transform: translateY(-2px);
+    }
+
+    .link-card img {
+      height: 26px;
+      width: auto;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -90,34 +112,52 @@
 <body>
 
 <header>
-  <a href="/">← Back to StepIn360</a>
-  <h1>C’est la Vie Hostel</h1>
-  <p class="subtitle">360° Virtual Tour</p>
+  <div class="logo">StepIn360</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/examples.html">Examples</a>
+    <a href="mailto:stepin360@gmail.com">Contact</a>
+  </nav>
 </header>
 
-<div class="container">
+<section class="hero">
+  <h1>C’est La Vie Hostel</h1>
+  <p class="subtitle">360° Virtual Tour</p>
+</section>
 
-  <!-- TOUR EMBED -->
-  <div class="tour">
-    <script 
-      src="https://teliportme.com/js/embed.js"
-      data-teliportme="https://teliportme.com/embed/tour/7cce8a5a/2529019"
-      data-width="100%"
-      data-height="520">
-    </script>
-  </div>
+<div class="tour">
+  <script 
+    src="https://teliportme.com/js/embed.js"
+    data-teliportme="https://teliportme.com/embed/tour/REPLACE_WITH_YOUR_TOUR_ID"
+    data-height="480"
+    data-width="100%">
+  </script>
+</div>
 
-  <!-- INFO -->
-  <div class="info">
-    <h2>Explore before you book</h2>
-    <p>Take a virtual walk through the hostel and see rooms, common areas and atmosphere.</p>
-    <a href="https://www.booking.com" target="_blank">Book on Booking.com</a>
-  </div>
+<div class="links">
+
+  <!-- Booking.com -->
+  <a class="link-card" href="https://www.booking.com/Share-48cGOa" target="_blank">
+    <img src="/Images/Booking.png" alt="Booking.com">
+    Book on Booking
+  </a>
+
+  <!-- Hostelworld (international) -->
+  <a class="link-card" href="https://www.hostelworld.com/hosteldetails.php/?HostelNumber=335751" target="_blank">
+    <img src="/Images/Hostelworld.png" alt="Hostelworld">
+    Book on Hostelworld
+  </a>
+
+  <!-- Google Maps -->
+  <a class="link-card" href="https://maps.app.goo.gl/k3tKDx81QMw6JpUM6?g_st=ic" target="_blank">
+    <img src="/Images/googlemaps.png" alt="Google Maps">
+    Open in Maps
+  </a>
 
 </div>
 
 <footer>
-  © 2026 StepIn360
+  Virtual tour powered by StepIn360
 </footer>
 
 </body>
