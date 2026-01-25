@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reggae Paradise – Virtual Tour</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0e0e0e;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #b5b5b5;
+      margin-bottom: 24px;
+    }
+
+    .tour-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .link-card {
+      background: #1a1a1a;
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      background: #242424;
+    }
+
+    .link-card img {
+      height: 28px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Reggae Paradise</h1>
+    <p>Explore the hostel in a full 360° virtual tour</p>
+
+    <!-- TOUR -->
+    <div class="tour-wrapper">
+      <script 
+        src="https://teliportme.com/js/embed.js"
+        data-teliportme="https://teliportme.com/embed/tour/c63b76f2"
+        data-height="500"
+        data-width="100%">
+      </script>
+    </div>
+
+    <!-- LINKS -->
+    <div class="links">
+
+      <!-- Booking -->
+      <a class="link-card" href="https://www.booking.com/Share-3BONFe" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Booking.com_Icon_2022.svg" alt="Booking">
+        <span>Book on Booking.com</span>
+      </a>
+
+      <!-- Hostelworld (international) -->
+      <a class="link-card" href="https://www.hostelworld.com/hosteldetails.php/Reggae-Paradise/325477" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hostelworld_logo.svg" alt="Hostelworld">
+        <span>Book on Hostelworld</span>
+      </a>
+
+      <!-- Google Maps -->
+      <a class="link-card" href="https://maps.app.goo.gl/x8LMPGWiFpMswJ1g7" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Google_Maps_Logo_2020.svg" alt="Google Maps">
+        <span>Open in Google Maps</span>
+      </a>
+
+    </div>
+
+    <footer>
+      Virtual tour powered by StepIn360
+    </footer>
+  </div>
+</body>
+</html>
