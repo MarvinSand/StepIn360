@@ -59,14 +59,14 @@
     }
 
     .section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       padding: 60px 20px;
     }
 
     .section h2 {
       font-size: 32px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       text-align: center;
     }
 
@@ -77,46 +77,18 @@
       text-align: center;
     }
 
-    .tour-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-    }
-
-    .tour-embed {
+    .tour-box {
       background: #161616;
-      padding: 18px;
-      border-radius: 16px;
+      padding: 20px;
+      border-radius: 18px;
       box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    }
-
-    .tour-embed h3 {
-      margin: 0 0 14px;
-      font-size: 20px;
-      text-align: center;
-    }
-
-    .tour-frame {
-      border-radius: 12px;
-      overflow: hidden;
     }
 
     iframe {
       width: 100%;
       height: 420px;
       border: none;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .feature {
-      background: #161616;
-      padding: 24px;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
     footer {
@@ -134,75 +106,40 @@
   <div class="logo">StepIn360</div>
   <nav>
     <a href="/">Home</a>
-    <a href="mailto:virtualviewpro@gmail.com">Contact</a>
+    <a href="/examples.html">Examples</a>
+    <a href="mailto:stepin360@gmail.com">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Virtual Tours that bring more bookings & visitors</h1>
+  <h1>Virtual tours that turn visitors into bookings</h1>
   <p>
-    StepIn360 creates immersive 360° virtual tours for
-    <strong>hostels, hotels, gyms, apartments, cafés and local businesses</strong>.
-    Show your place before people book or visit — and stand out online.
+    StepIn360 creates immersive 360° tours for
+    <strong>hostels, hotels, apartments, gyms, cafés and local businesses</strong>.
+    Show your space before people book — and stand out where it matters.
   </p>
 </section>
 
-<!-- EMBEDDED TOUR EXAMPLES -->
 <section class="section">
-  <h2>Live tour examples</h2>
-  <p>These tours are embedded exactly how your customers will use them.</p>
+  <h2>Live example</h2>
+  <p>This is exactly how your virtual tour will look on your website or booking page.</p>
 
-  <div class="tour-grid">
-
-    <!-- STREET VIEW -->
-    <div class="tour-embed">
-      <h3>Google Street View</h3>
-      <div class="tour-frame">
-<iframe
-  src="https://www.google.com/maps/embed?pb=!4v0!6m8!1m7!1sCAoSLEFGMVFpcFBYbWR2cG1rU0x5V3NfVjFDWjNEbE1QOXhxSTJ5QzZ2NEs2!2m2!1d0!2d0!3f0!4f0!5f0.7820865974627469"
-  width="100%"
-  height="500"
-  style="border:0;"
-  allowfullscreen
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-      </div>
-    </div>
-
-    <!-- NORMAL TOUR -->
-    <div class="tour-embed">
-      <h3>Website / Booking / Hostelworld</h3>
-      <div class="tour-frame">
-        <script 
-          src="https://teliportme.com/js/embed.js"
-          data-teliportme="https://teliportme.com/embed/tour/c63b76f2"
-          data-height="420"
-          data-width="100%">
-        </script>
-      </div>
-    </div>
-
+  <div class="tour-box">
+    <script 
+      src="https://teliportme.com/js/embed.js"
+      data-teliportme="https://teliportme.com/embed/tour/c63b76f2"
+      data-height="420"
+      data-width="100%">
+    </script>
   </div>
 </section>
 
 <section class="section">
   <h2>Why virtual tours work</h2>
-
-  <div class="features">
-    <div class="feature">
-      <h3>More trust</h3>
-      <p>People know what to expect before booking or visiting.</p>
-    </div>
-    <div class="feature">
-      <h3>Higher conversion</h3>
-      <p>Perfect for Booking.com, Hostelworld and business websites.</p>
-    </div>
-    <div class="feature">
-      <h3>More visits</h3>
-      <p>Virtual tours motivate people to come in real life.</p>
-    </div>
-  </div>
+  <p>
+    Virtual tours build trust, increase booking confidence and
+    help customers decide faster.
+  </p>
 </section>
 
 <footer>
