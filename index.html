@@ -5,6 +5,8 @@
   <title>StepIn360 – Virtual Tours for Businesses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description" content="Professional virtual tours for hostels, hotels, apartments, gyms and cafés. Increase bookings and trust with immersive 360° tours.">
+
   <style>
     body {
       margin: 0;
@@ -18,6 +20,7 @@
       color: inherit;
     }
 
+    /* HEADER */
     header {
       padding: 24px 40px;
       display: flex;
@@ -28,28 +31,32 @@
 
     .logo {
       font-size: 22px;
-      font-weight: 600;
+      font-weight: 700;
+      color: #ffffff;
     }
 
     nav a {
-      margin-left: 24px;
-      opacity: 0.8;
+      margin-left: 28px;
+      opacity: 0.85;
+      font-weight: 500;
     }
 
     nav a:hover {
       opacity: 1;
     }
 
+    /* HERO */
     .hero {
-      padding: 90px 20px 60px;
-      text-align: center;
       max-width: 1000px;
       margin: auto;
+      padding: 100px 20px 60px;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 46px;
+      font-size: 48px;
       margin-bottom: 18px;
+      line-height: 1.2;
     }
 
     .hero p {
@@ -58,30 +65,33 @@
       line-height: 1.6;
     }
 
+    /* SECTIONS */
     .section {
       max-width: 1100px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
+      text-align: center;
     }
 
     .section h2 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 14px;
-      text-align: center;
     }
 
     .section p {
       font-size: 18px;
       opacity: 0.85;
       margin-bottom: 40px;
-      text-align: center;
     }
 
+    /* TOUR */
     .tour-box {
       background: #161616;
       padding: 20px;
       border-radius: 18px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      max-width: 900px;
+      margin: auto;
     }
 
     iframe {
@@ -91,38 +101,82 @@
       border-radius: 14px;
     }
 
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-block;
+      background: #ffffff;
+      color: #000000;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      border: 1px solid #333;
+      padding: 12px 28px;
+      border-radius: 30px;
+      margin-top: 30px;
+      opacity: 0.9;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: #161616;
+      border-radius: 20px;
+      padding: 50px 30px;
+      margin-top: 80px;
+    }
+
+    .cta-box h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      font-size: 18px;
+      opacity: 0.85;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px 20px;
-      opacity: 0.5;
       font-size: 14px;
+      opacity: 0.5;
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="logo">StepIn360</div>
+  <a href="/" class="logo">StepIn360</a>
   <nav>
-    <a href="/">Home</a>
     <a href="/examples.html">Examples</a>
-    <a href="mailto:virtualviewpro@gmail.com">Contact</a>
+    <a href="/contact.html">Contact</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Virtual tours that turn visitors into bookings</h1>
+  <h1>Virtual tours that increase bookings</h1>
   <p>
-    StepIn360 creates immersive 360° tours for
+    StepIn360 creates immersive virtual tours for
     <strong>hostels, hotels, apartments, gyms, cafés and local businesses</strong>.
-    Show your space before people book — and stand out where it matters.
+    Let guests explore your place before they book or visit.
   </p>
 </section>
 
+<!-- TOUR -->
 <section class="section">
-  <h2>Live example</h2>
-  <p>This is exactly how your virtual tour will look on your website or booking page.</p>
+  <h2>Live tour example</h2>
+  <p>
+    This is exactly how your business will appear online —
+    professional, immersive and trustworthy.
+  </p>
 
   <div class="tour-box">
     <script 
@@ -132,18 +186,26 @@
       data-width="100%">
     </script>
   </div>
+
+  <a href="/examples.html" class="btn-secondary">
+    See other tours →
+  </a>
+
+  <div class="cta-box">
+    <h3>Want more bookings?</h3>
+    <p>
+      Virtual tours build trust and help guests decide faster.
+      Perfect for Booking, Hostelworld and websites.
+    </p>
+    <a href="/contact.html" class="btn-primary">
+      Get your virtual tour
+    </a>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Why virtual tours work</h2>
-  <p>
-    Virtual tours build trust, increase booking confidence and
-    help customers decide faster.
-  </p>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  Virtual tours powered by StepIn360
+  © StepIn360 – Virtual tours for businesses
 </footer>
 
 </body>
