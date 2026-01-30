@@ -32,7 +32,6 @@
     .logo {
       font-size: 22px;
       font-weight: 700;
-      color: #ffffff;
     }
 
     nav a {
@@ -65,7 +64,7 @@
       line-height: 1.6;
     }
 
-    /* SECTIONS */
+    /* SECTION */
     .section {
       max-width: 1100px;
       margin: auto;
@@ -74,24 +73,25 @@
     }
 
     .section h2 {
-      font-size: 34px;
-      margin-bottom: 14px;
+      font-size: 40px;
+      margin-bottom: 16px;
     }
 
     .section p {
-      font-size: 18px;
+      font-size: 20px;
       opacity: 0.85;
+      line-height: 1.6;
       margin-bottom: 40px;
     }
 
     /* TOUR */
     .tour-box {
+      max-width: 900px;
+      margin: auto;
       background: #161616;
       padding: 20px;
       border-radius: 18px;
       box-shadow: 0 0 40px rgba(0,0,0,0.6);
-      max-width: 900px;
-      margin: auto;
     }
 
     iframe {
@@ -109,7 +109,7 @@
       padding: 14px 30px;
       border-radius: 30px;
       font-weight: 600;
-      margin-top: 16px;
+      margin-top: 20px;
     }
 
     .btn-secondary {
@@ -117,7 +117,7 @@
       border: 1px solid #333;
       padding: 12px 28px;
       border-radius: 30px;
-      margin-top: 30px;
+      margin-top: 40px;
       opacity: 0.9;
     }
 
@@ -127,11 +127,15 @@
       border-radius: 20px;
       padding: 50px 30px;
       margin-top: 80px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
 
     .cta-box h3 {
       font-size: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .cta-box p {
@@ -170,20 +174,22 @@
   </p>
 </section>
 
-<!-- TOUR -->
-<h1>360° Virtual Tours for Hotels & Businesses</h1>
-<p>
-  Let guests step inside before they arrive.  
-  More trust. More bookings. More visits.
-</p>
+<!-- MAIN SECTION -->
+<section class="section">
 
-<div style="margin:40px 0;">
-  <script src="https://teliportme.com/js/embed.js"
-    data-teliportme="https://teliportme.com/embed/tour/9895f769"
-    data-height="420"
-    data-width="100%">
-  </script>
-</div>
+  <h2>360° Virtual Tours for Hotels & Businesses</h2>
+  <p>
+    Let guests step inside before they arrive.<br>
+    More trust. More bookings. More visits.
+  </p>
+
+  <div class="tour-box">
+    <script src="https://teliportme.com/js/embed.js"
+      data-teliportme="https://teliportme.com/embed/tour/9895f769"
+      data-height="420"
+      data-width="100%">
+    </script>
+  </div>
 
   <a href="/examples.html" class="btn-secondary">
     See other tours →
@@ -192,13 +198,14 @@
   <div class="cta-box">
     <h3>Want more bookings?</h3>
     <p>
-      Virtual tours build trust and help guests decide faster.
+      Virtual tours build trust and help guests decide faster.<br>
       Perfect for Booking, Hostelworld and websites.
     </p>
     <a href="/contact.html" class="btn-primary">
       Get your virtual tour
     </a>
   </div>
+
 </section>
 
 <!-- FOOTER -->
