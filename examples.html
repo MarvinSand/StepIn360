@@ -6,6 +6,28 @@
   <title>Examples – StepIn360</title>
 
   <style>
+  .whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+    
     :root {
       --bg: #0f0f0f;
       --bg-card: #181818;
@@ -92,6 +114,12 @@
   </style>
 </head>
 
+  <a href="https://wa.me/4917673533365"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+   💬
+</a>
 <body>
 
 <header>
