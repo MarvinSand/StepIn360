@@ -114,16 +114,29 @@
       background: #0056c7;
     }
 
-    .example-card {
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.example-card {
   background: #0f0f0f;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #1e1e1e;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .example-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.example-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .example-image {
@@ -132,7 +145,7 @@
 
 .example-image img {
   width: 100%;
-  height: auto;      /* WICHTIG */
+  height: auto; /* wichtig: kein crop */
   display: block;
 }
 
@@ -147,18 +160,9 @@
 }
 
 .example-content p {
-  margin: 0 0 12px;
-  color: #aaa;
+  margin: 0 0 16px;
   font-size: 0.95rem;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.1);
-  margin-bottom: 14px;
+  color: #aaa;
 }
 
 .view-btn {
@@ -168,8 +172,12 @@
   color: #fff;
   border-radius: 30px;
   font-size: 0.9rem;
+  transition: background 0.25s ease;
 }
 
+.view-btn:hover {
+  background: #0062cc;
+}
     /* Footer */
     footer {
       text-align: center;
@@ -199,42 +207,62 @@
   </section>
 
   <!-- Examples -->
-  <section class="examples-grid">
+<div class="examples-grid">
 
-    <!-- New Ocean Vibes -->
-    <div class="example-card">
+  <!-- New Ocean Vibes -->
+  <div class="example-card">
+    <a href="/new-ocean-vibes/" class="example-link">
       <div class="example-image">
-        Images/preview-natraj-guest-house.jpeg
+        <img
+          src="Images/preview-new-ocean-vibes.jpeg"
+          alt="New Ocean Vibes Hotel Virtual Tour"
+          loading="lazy"
+        />
       </div>
       <div class="example-content">
         <h3>New Ocean Vibes</h3>
-        <span>Sri Lanka · Ahangama</span>
-        <a href="https://www.stepin360.net/new-ocean-vibes/" class="view-button">
-          View Tour
-        </a>
+        <p>Sri Lanka · Ahangama</p>
+        <div class="view-btn">View Tour</div>
       </div>
-    </div>
+    </a>
+  </div>
 
-    <!-- Natraj Guest House -->
-    <div class="example-card">
-  <a href="/natraj-guest-house/" class="example-link">
-    
-    <div class="example-image">
-      <img 
-        src="Images/preview-natraj-guest-house.jpeg"
-        alt="Natraj Guest House Virtual Tour"
-        loading="lazy"
-      />
-    </div>
+  <!-- Natraj Guest House -->
+  <div class="example-card">
+    <a href="/natraj-guest-house/" class="example-link">
+      <div class="example-image">
+        <img
+          src="Images/preview-natraj-guest-house.jpeg"
+          alt="Natraj Guest House Virtual Tour"
+          loading="lazy"
+        />
+      </div>
+      <div class="example-content">
+        <h3>Natraj Guest House</h3>
+        <p>Sri Lanka · Trincomalee</p>
+        <div class="view-btn">View Tour</div>
+      </div>
+    </a>
+  </div>
 
-    <div class="example-content">
-      <h3>Natraj Guest House</h3>
-      <p>Sri Lanka · Trincomalee</p>
-      <span class="badge">360° Virtual Tour</span>
-      <div class="view-btn">View Tour</div>
-    </div>
+  <!-- Reggae Paradise -->
+  <div class="example-card">
+    <a href="/reggae-paradise/" class="example-link">
+      <div class="example-image">
+        <img
+          src="Images/preview-reggae-paradise.jpeg"
+          alt="Reggae Paradise Virtual Tour"
+          loading="lazy"
+        />
+      </div>
+      <div class="example-content">
+        <h3>Reggae Paradise</h3>
+        <p>Sri Lanka · Sigiriya</p>
+        <div class="view-btn">View Tour</div>
+      </div>
+    </a>
+  </div>
 
-  </a>
 </div>
 
     <!-- Reggae Paradise -->
