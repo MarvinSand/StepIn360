@@ -215,39 +215,88 @@
     See other tours →
   </a>
 
-<section class="what-we-offer">
+<section class="offer-section">
   <h2>What we offer</h2>
-  <ul>
-    <li><strong>Full virtual tour of your space</strong></li>
-    <li><strong>Upload on Google Street View</strong></li>
-    <li><strong>Dedicated subpage with a shareable link</strong></li>
-    <li><strong>Customized image with QR code for your booking site</strong></li>
-    <li><strong>Embed code for your own website</strong></li>
-  </ul>
+  <p class="offer-subtitle">
+    Everything you need to present your property professionally and increase bookings.
+  </p>
+
+  <div class="offer-grid">
+    <div class="offer-item">
+      <h3>Full Virtual Tour</h3>
+      <p>A complete 360° walkthrough of your space so guests can explore before booking.</p>
+    </div>
+
+    <div class="offer-item">
+      <h3>Google Street View Upload</h3>
+      <p>Your tour published on Google to increase visibility and trust.</p>
+    </div>
+
+    <div class="offer-item">
+      <h3>Dedicated Subpage</h3>
+      <p>A clean, shareable page hosted on StepIn360 for easy sharing with guests.</p>
+    </div>
+
+    <div class="offer-item">
+      <h3>QR Code Image</h3>
+      <p>Custom image with QR code for Booking.com or other platforms.</p>
+    </div>
+
+    <div class="offer-item">
+      <h3>Website Embed</h3>
+      <p>Embed the tour directly on your own website for higher engagement.</p>
+    </div>
+  </div>
 </section>
 
 <style>
-.what-we-offer {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 40px 20px;
+.offer-section {
+  max-width: 1100px;
+  margin: 90px auto;
+  padding: 0 24px;
   text-align: center;
 }
 
-.what-we-offer h2 {
-  font-size: 2rem;
-  margin-bottom: 25px;
+.offer-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
-.what-we-offer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.offer-subtitle {
+  font-size: 1.05rem;
+  color: #b5b5b5;
+  margin-bottom: 50px;
 }
 
-.what-we-offer li {
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.offer-item {
+  background: #111;
+  border: 1px solid #222;
+  padding: 28px;
+  border-radius: 14px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.offer-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.offer-item h3 {
   font-size: 1.1rem;
-  margin: 12px 0;
+  margin-bottom: 8px;
+}
+
+.offer-item p {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  line-height: 1.5;
 }
 </style>
   
