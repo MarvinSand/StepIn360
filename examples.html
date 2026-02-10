@@ -114,6 +114,62 @@
       background: #0056c7;
     }
 
+    .example-card {
+  background: #0f0f0f;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #1e1e1e;
+  transition: transform 0.3s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-6px);
+}
+
+.example-image {
+  background: #000;
+}
+
+.example-image img {
+  width: 100%;
+  height: auto;      /* WICHTIG */
+  display: block;
+}
+
+.example-content {
+  padding: 22px;
+}
+
+.example-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.example-content p {
+  margin: 0 0 12px;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 14px;
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
+
     /* Footer */
     footer {
       text-align: center;
@@ -162,18 +218,22 @@
     <!-- Natraj Guest House -->
     <div class="example-card">
   <a href="/natraj-guest-house/" class="example-link">
+    
     <div class="example-image">
       <img 
-        src="Images/preview-natraj-guest-house.jpeg" 
-        alt="Natraj Guest House Virtual Tour – Sri Lanka Trincomalee"
+        src="Images/preview-natraj-guest-house.jpeg"
+        alt="Natraj Guest House Virtual Tour"
         loading="lazy"
       />
-      <div class="example-overlay">
-        <span class="badge">360° Virtual Tour</span>
-        <h3>Natraj Guest House</h3>
-        <p>Sri Lanka • Trincomalee</p>
-      </div>
     </div>
+
+    <div class="example-content">
+      <h3>Natraj Guest House</h3>
+      <p>Sri Lanka · Trincomalee</p>
+      <span class="badge">360° Virtual Tour</span>
+      <div class="view-btn">View Tour</div>
+    </div>
+
   </a>
 </div>
 
