@@ -1,198 +1,198 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Examples – StepIn360</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Examples | StepIn360</title>
   <style>
-  .whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 56px;
-  height: 56px;
-  background: #25D366;
-  color: #fff;
-  border-radius: 50%;
-  font-size: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  z-index: 9999;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.05);
-}
-    
-    :root {
-      --bg: #0f0f0f;
-      --bg-card: #181818;
-      --text: #ffffff;
-      --text-muted: #b3b3b3;
-      --accent: #1e90ff;
-    }
-
     body {
       margin: 0;
-      font-family: Inter, system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
     }
 
-    a { text-decoration: none; }
-
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 32px;
-      background: var(--bg-card);
+      padding: 20px 40px;
+      border-bottom: 1px solid #222;
     }
 
-    header a.logo {
-      font-size: 20px;
-      font-weight: 700;
+    header a {
       color: #fff;
-    }
-
-    header nav a {
-      color: #fff;
-      font-weight: 500;
+      text-decoration: none;
+      font-size: 16px;
       margin-left: 24px;
     }
 
-    section {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 24px;
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    .grid {
+    /* Page Title */
+    .page-title {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .page-title h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .page-title p {
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    /* Grid */
+    .examples-grid {
+      max-width: 1200px;
+      margin: 0 auto 100px;
+      padding: 0 24px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
+      gap: 36px;
     }
 
-    .card {
-      background: var(--bg-card);
-      padding: 20px;
-      border-radius: 14px;
+    .example-card {
+      background: #0f0f0f;
+      border: 1px solid #1e1e1e;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .btn {
+    .example-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .example-image {
+      height: 200px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .example-content {
+      padding: 24px;
+    }
+
+    .example-content h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .example-content span {
       display: block;
-      margin-top: 16px;
-      padding: 12px;
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-      border-radius: 8px;
-      font-weight: 600;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 18px;
     }
 
-    /* FOOTER */
+    .view-button {
+      display: inline-block;
+      padding: 10px 22px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+
+    .view-button:hover {
+      background: #0056c7;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 40px 20px;
-      font-size: 14px;
-      opacity: 0.5;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 0.85rem;
     }
-    .footer-contact a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-contact a:hover {
-  text-decoration: underline;
-}
-    
   </style>
 </head>
 
-  <a href="https://wa.me/4917673533365"
-   class="whatsapp-float"
-   target="_blank"
-   aria-label="Chat on WhatsApp">
-   💬
-</a>
 <body>
 
-<header>
-  <a href="/" class="logo">StepIn360</a>
-  <nav>
-    <a href="/examples">Examples</a>
-    <a href="/contact">Contact</a>
-  </nav>
-</header>
+  <!-- Header -->
+  <header>
+    <a href="/" class="logo">STEPIN360</a>
+    <nav>
+      <a href="/examples">Examples</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
 
-<section>
-  <h1>Virtual Tour Examples</h1>
-  <p style="color:var(--text-muted);">
-    Real projects created for hotels and hostels in Sri Lanka.
-  </p>
+  <!-- Title -->
+  <section class="page-title">
+    <h1>Examples</h1>
+    <p>A selection of virtual tours created for hotels and guest houses.</p>
+  </section>
 
-  <div class="grid">
+  <!-- Examples -->
+  <section class="examples-grid">
 
-    <div class="card">
-      <h3>Natraj Guest House</h3>
-      <script src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/9895f769"
-        data-height="260"
-        data-width="100%">
-      </script>
-      <a href="https://www.stepin360.net/natraj-guest-house/" class="btn">
-        View Tour
-      </a>
+    <!-- New Ocean Vibes -->
+    <div class="example-card">
+      <div class="example-image">
+        Preview Image
+      </div>
+      <div class="example-content">
+        <h3>New Ocean Vibes</h3>
+        <span>Sri Lanka · Ahangama</span>
+        <a href="https://www.stepin360.net/new-ocean-vibes/" class="view-button">
+          View Tour
+        </a>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Reggae Paradise Hostel</h3>
-      <script src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/c63b76f2"
-        data-height="260"
-        data-width="100%">
-      </script>
-      <a href="https://www.stepin360.net/reggae-paradise/" class="btn">
-        View Tour
-      </a>
+    <!-- Natraj Guest House -->
+    <div class="example-card">
+      <div class="example-image">
+        Preview Image
+      </div>
+      <div class="example-content">
+        <h3>Natraj Guest House</h3>
+        <span>Sri Lanka · Trincomalee</span>
+        <a href="https://www.stepin360.net/natraj-guest-house/" class="view-button">
+          View Tour
+        </a>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>C'est la Vie Hostel</h3>
-      <script src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/7cce8a5a"
-        data-height="260"
-        data-width="100%">
-      </script>
-      <a href="https://www.stepin360.net/cest-la-vie-hostel/" class="btn">
-        View Tour
-      </a>
+    <!-- Reggae Paradise -->
+    <div class="example-card">
+      <div class="example-image">
+        Preview Image
+      </div>
+      <div class="example-content">
+        <h3>Reggae Paradise</h3>
+        <span>Sri Lanka · Sigiriya</span>
+        <a href="https://www.stepin360.net/reggae-paradise/" class="view-button">
+          View Tour
+        </a>
+      </div>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <footer class="footer">
-  <div class="footer-contact">
-    <p><strong>Contact</strong></p>
-    <p>
-      📧 <a href="mailto:contact@stepin360.net">contact@stepin360.net</a>
-    </p>
-    <p>
-      💬 <a href="https://wa.me/4917673533365" target="_blank">
-        WhatsApp: +49 176 73533365
-      </a>
-    </p>
-  </div>
-</footer>
-  © StepIn360 – Virtual tours for businesses
-</footer>
+  <!-- Footer -->
+  <footer>
+    © StepIn360 – Virtual 360° Tours
+  </footer>
 
+</body>
 </html>
