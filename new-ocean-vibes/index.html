@@ -13,7 +13,6 @@
       color: #fff;
     }
 
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -32,7 +31,6 @@
       opacity: 0.8;
     }
 
-    /* Container */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -45,20 +43,23 @@
       margin-bottom: 10px;
     }
 
+    h2 {
+      font-size: 28px;
+      margin: 60px 0 20px 0;
+    }
+
     .subtitle {
       font-size: 18px;
       opacity: 0.85;
       margin-bottom: 40px;
     }
 
-    /* Tour */
     .tour {
       display: flex;
       justify-content: center;
       margin-bottom: 60px;
     }
 
-    /* Links */
     .links {
       display: flex;
       justify-content: center;
@@ -86,7 +87,6 @@
       opacity: 0.85;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -98,7 +98,6 @@
 
 <body>
 
-  <!-- Header -->
   <header>
     <a href="https://www.stepin360.net"><strong>StepIn360</strong></a>
     <div>
@@ -107,17 +106,29 @@
     </div>
   </header>
 
-  <!-- Content -->
   <div class="container">
     <h1>New Ocean Vibes Hotel</h1>
     <p class="subtitle">
       Explore the hotel with an immersive 360° virtual tour.
     </p>
 
+    <!-- HOTEL TOUR -->
     <div class="tour">
       <script
         src="https://teliportme.com/js/embed.js"
         data-teliportme="https://teliportme.com/embed/tour/4c333ccf"
+        data-width="800"
+        data-height="420">
+      </script>
+    </div>
+
+    <!-- RESTAURANT SECTION -->
+    <h2>Lazy Right Restaurant and Bar</h2>
+
+    <div class="tour">
+      <script
+        src="https://teliportme.com/js/embed.js"
+        data-teliportme="https://teliportme.com/embed/tour/fcec2518"
         data-width="800"
         data-height="420">
       </script>
@@ -137,7 +148,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     © 2026 StepIn360 · 360° Virtual Tours
   </footer>
