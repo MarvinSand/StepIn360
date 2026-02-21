@@ -1,38 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ivory Resort Dickwella – 360° Virtual Tour</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Ivory Resort Dickwella in immersive 360° view. Experience the property before you book.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ivory Resort Dickwella | StepIn360</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 24px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 36px;
+    }
+
+    .tour {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .links a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .links img {
+      width: 60px;
+      height: auto;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f8f8f8;">
+<body>
 
-    <h1 style="margin-top: 40px;">Ivory Resort Dickwella</h1>
-    <p>Explore the property in 360° before you book.</p>
+  <!-- Header -->
+  <header>
+    <a href="https://www.stepin360.net"><strong>StepIn360</strong></a>
+    <div>
+      <a href="https://www.stepin360.net/examples">Examples</a>
+      <a href="https://www.stepin360.net/contact">Contact</a>
+    </div>
+  </header>
 
-    <!-- 360° Tour Embed -->
-    <div style="margin: 40px 0;">
-        <script src="https://teliportme.com/js/embed.js"
-                data-teliportme="https://teliportme.com/embed/tour/14c447af"
-                data-height="500"
-                data-width="100%">
-        </script>
+  <!-- Content -->
+  <div class="container">
+
+    <h1>Ivory Resort Dickwella</h1>
+    <p class="subtitle">Explore the resort with an immersive 360° virtual tour.</p>
+
+    <div class="tour">
+      <script
+        src="https://teliportme.com/js/embed.js"
+        data-teliportme="https://teliportme.com/embed/tour/14c447af"
+        data-width="800"
+        data-height="420">
+      </script>
     </div>
 
-    <!-- Booking & Google Links -->
-    <div style="margin-bottom: 50px;">
-        <a href="https://www.booking.com/Share-bZ7wEo" target="_blank" 
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: #000; color: #fff; text-decoration: none; border-radius: 5px;">
-           Book Now
-        </a>
+    <!-- Booking / Google Links -->
+    <div class="links">
+      <a href="https://www.booking.com/Share-bZ7wEo" target="_blank">
+        <img src="/Images/Booking.png" alt="Booking.com">
+        Booking.com
+      </a>
 
-        <a href="https://share.google/zQFyJ6P0xnjYfQ51F" target="_blank"
-           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: #4285F4; color: #fff; text-decoration: none; border-radius: 5px;">
-           View on Google
-        </a>
+      <a href="https://share.google/zQFyJ6P0xnjYfQ51F" target="_blank">
+        <img src="/Images/googlemaps.png" alt="Google Maps">
+        Google Maps
+      </a>
     </div>
+
+  </div>
 
 </body>
 </html>
