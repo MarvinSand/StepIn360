@@ -1,178 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sithujaya Green Mirissa | 360° Virtual Tour | StepIn360</title>
 
-<title>Sithujaya Green Mirissa | 360° Virtual Tour | Stepin360</title>
-<meta name="description" content="Explore Sithujaya Green Mirissa in Mirissa, Sri Lanka through an immersive 360° virtual tour. Discover the rooms and experience the property before booking your stay.">
-<meta name="keywords" content="Sithujaya Green Mirissa, Mirissa hotel, Sri Lanka accommodation, 360 virtual tour Sri Lanka, Mirissa guesthouse">
-<meta name="author" content="Stepin360">
-<meta name="robots" content="index, follow">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover Sithujaya Green Mirissa in Sri Lanka with an immersive 360° virtual tour. Explore the rooms, atmosphere and surroundings before booking your stay in Mirissa.">
+  <meta name="keywords" content="Sithujaya Green Mirissa, Mirissa hotel, Sri Lanka accommodation, 360 virtual tour Mirissa, hotel virtual tour Sri Lanka, StepIn360">
+  <meta name="author" content="StepIn360">
+  <meta name="robots" content="index, follow">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sithujaya Green Mirissa | 360° Virtual Tour">
+  <meta property="og:description" content="Take a 360° virtual tour of Sithujaya Green Mirissa and explore the property before booking your stay in Mirissa, Sri Lanka.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.stepin360.net/sithujaya-green-mirissa">
+  <meta property="og:image" content="https://www.stepin360.net/Images/sithujaya-cover.jpg">
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #ffffff;
-    color: #111;
-    line-height: 1.6;
-}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sithujaya Green Mirissa | 360° Virtual Tour">
+  <meta name="twitter:description" content="Explore Sithujaya Green Mirissa with a 360° immersive experience.">
+  <meta name="twitter:image" content="https://www.stepin360.net/Images/sithujaya-cover.jpg">
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* HERO */
-.hero {
-    padding: 80px 0 60px;
-    text-align: center;
-    background: linear-gradient(135deg, #f7f7f7, #ffffff);
-}
-
-.hero h1 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #666;
-}
-
-/* TOUR */
-.tour-section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.tour-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-/* INFO BUTTONS */
-.info-section {
-    padding: 40px 0 60px;
-    text-align: center;
-}
-
-.buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 14px 28px;
-    background: #111;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: 0.3s ease;
-}
-
-.btn:hover {
-    background: #333;
-}
-
-.btn.secondary {
-    background: transparent;
-    border: 1px solid #111;
-    color: #111;
-}
-
-.btn.secondary:hover {
-    background: #111;
-    color: #fff;
-}
-
-/* CTA */
-.cta {
-    padding: 80px 0;
-    text-align: center;
-    background: #f7f7f7;
-}
-
-.cta h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.cta p {
-    margin-bottom: 25px;
-    color: #555;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 30px;
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
     }
 
-    .tour-wrapper iframe,
-    .tour-wrapper div {
-        width: 100% !important;
-        height: auto !important;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
     }
-}
-</style>
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 24px;
+    }
+
+    header a:hover {
+      opacity: 0.8;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin: 60px 0 20px 0;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 40px;
+    }
+
+    .tour {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 20px 0 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .links img {
+      width: 60px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .links a:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="hero">
-    <div class="container">
-        <h1>Sithujaya Green Mirissa</h1>
-        <p>Immersive 360° Virtual Tour Experience</p>
+  <header>
+    <a href="https://www.stepin360.net"><strong>StepIn360</strong></a>
+    <div>
+      <a href="https://www.stepin360.net/examples">Examples</a>
+      <a href="https://www.stepin360.net/contact">Contact</a>
     </div>
-</section>
+  </header>
 
-<section class="tour-section">
-    <div class="container">
-        <div class="tour-wrapper">
-            <script src="https://teliportme.com/js/embed.js"
-                data-teliportme="https://teliportme.com/embed/tour/3795630c"
-                data-height="360"
-                data-width="640">
-            </script>
-        </div>
+  <div class="container">
+    <h1>Sithujaya Green Mirissa</h1>
+    <p class="subtitle">
+      Explore the property with an immersive 360° virtual tour.
+    </p>
+
+    <!-- HOTEL TOUR -->
+    <div class="tour">
+      <script
+        src="https://teliportme.com/js/embed.js"
+        data-teliportme="https://teliportme.com/embed/tour/3795630c"
+        data-width="800"
+        data-height="420">
+      </script>
     </div>
-</section>
 
-<section class="info-section">
-    <div class="container">
-        <div class="buttons">
-            <a href="https://www.booking.com/Share-HELiS8r" target="_blank" class="btn">
-                Book on Booking.com
-            </a>
+    <!-- HOTEL LINKS -->
+    <div class="links">
+      <a href="https://www.booking.com/Share-HELiS8r" target="_blank">
+        <img src="/Images/Booking.png" alt="Booking.com">
+        Booking.com
+      </a>
 
-            <a href="https://share.google/dMCAsP7VZSMjqlTQg" target="_blank" class="btn secondary">
-                View on Google
-            </a>
-        </div>
+      <a href="https://share.google/dMCAsP7VZSMjqlTQg" target="_blank">
+        <img src="/Images/googlemaps.png" alt="Google Maps">
+        Google Maps
+      </a>
     </div>
-</section>
 
-<section class="cta">
-    <div class="container">
-        <h2>Get Your Own 360° Virtual Tour</h2>
-        <p>Increase direct bookings and stand out with an immersive experience for your guests.</p>
-        <a href="https://www.stepin360.net/contact/" class="btn">
-            Contact Stepin360
-        </a>
-    </div>
-</section>
+  </div>
+
+  <footer>
+    © 2026 StepIn360 · 360° Virtual Tours
+  </footer>
 
 </body>
 </html>
