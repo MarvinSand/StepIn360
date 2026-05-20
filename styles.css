@@ -13,6 +13,16 @@
   --glass-bg: rgba(11, 15, 25, 0.7);
 }
 
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --surface-main: #f3f4f6;
+  --surface-secondary: #e5e7eb;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-color: #d1d5db;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -228,4 +238,42 @@ footer {
 /* Page Standard padding for fixed header */
 .page-wrapper {
   padding-top: 100px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24px;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+  vertical-align: middle;
+}
+
+.theme-toggle:hover {
+  border-color: #4facfe;
+  color: #4facfe;
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #4facfe;
+  outline-offset: 2px;
+}
+
+/* Light-mode header border */
+:root[data-theme="light"] header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+:root[data-theme="light"] .whatsapp-float {
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
 }

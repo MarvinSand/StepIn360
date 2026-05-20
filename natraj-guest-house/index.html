@@ -7,6 +7,8 @@
 
   <meta name="description" content="Explore Natraj Guest House in Trincomalee with a professional 360° virtual tour." />
 
+  <script src="../theme.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -102,6 +104,36 @@
         font-size: 28px;
       }
     }
+
+    /* Theme toggle (in header) */
+    .theme-toggle {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: inherit;
+      display: inline-flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      padding: 0;
+    }
+    .theme-toggle:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.3); }
+    .theme-toggle:focus-visible { outline: 2px solid #4facfe; outline-offset: 2px; }
+
+    .nav-right { align-items: center; }
+
+    /* Light mode overrides */
+    :root[data-theme="light"] body { background: #f8f8f8; color: #1a1a1a; }
+    :root[data-theme="light"] header { background: #ffffff; border-bottom: 1px solid #e5e7eb; }
+    :root[data-theme="light"] header a { color: #1a1a1a; }
+    :root[data-theme="light"] .subtitle { color: #475569; }
+    :root[data-theme="light"] .links a { color: #1a1a1a; }
+    :root[data-theme="light"] footer { color: #6b7280; }
+    :root[data-theme="light"] .theme-toggle {
+      background: rgba(0,0,0,0.05);
+      border-color: rgba(0,0,0,0.12);
+    }
+    :root[data-theme="light"] .theme-toggle:hover { border-color: rgba(0,0,0,0.25); }
   </style>
 </head>
 
@@ -113,6 +145,7 @@
   <div class="nav-right">
     <a href="/examples.html">Examples</a>
     <a href="/contact.html">Contact</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
   </div>
 </header>
 
