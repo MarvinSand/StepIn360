@@ -35,13 +35,25 @@
     updateThemeToggleIcons(next);
   };
 
+  function attachListeners() {
+    var buttons = document.querySelectorAll('.theme-toggle');
+    for (var i = 0; i < buttons.length; i++) {
+      if (!buttons[i].dataset.themeBound) {
+        buttons[i].addEventListener('click', function (e) {
+          e.preventDefault();
+          window.toggleTheme();
+        });
+        buttons[i].dataset.themeBound = '1';
+      }
+    }
+    updateThemeToggleIcons(document.documentElement.getAttribute('data-theme') || 'dark');
+  }
+
   applyTheme(getInitialTheme());
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      updateThemeToggleIcons(document.documentElement.getAttribute('data-theme') || 'dark');
-    });
+    document.addEventListener('DOMContentLoaded', attachListeners);
   } else {
-    updateThemeToggleIcons(document.documentElement.getAttribute('data-theme') || 'dark');
+    attachListeners();
   }
 })();
