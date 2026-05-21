@@ -147,13 +147,30 @@
 
     <!-- HOTEL TOUR -->
     <div class="tour">
-      <script
-        src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/4c333ccf"
-        data-width="800"
-        data-height="420">
-      </script>
+      <iframe id="tour-hotel" name="New Ocean Vibes Ahangama"
+        src="https://tour.panoee.net/iframe/6a0e539d121c5cb81f4cc80c"
+        frameBorder="0" width="100%" height="400px" scrolling="no"
+        allowvr="yes" allow="vr; xr; accelerometer; gyroscope; autoplay;"
+        allowFullScreen="true" webkitallowfullscreen="true"
+        mozallowfullscreen="true" loading="eager"></iframe>
     </div>
+    <script>
+      (function(){
+        var name = "tour-hotel";
+        window.addEventListener("devicemotion", function(e){
+          var iframe = document.getElementById(name);
+          if (iframe) iframe.contentWindow.postMessage({
+            type:"devicemotion",
+            deviceMotionEvent:{
+              acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z },
+              accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z },
+              rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma },
+              interval:e.interval, timeStamp:e.timeStamp
+            }
+          }, "*");
+        });
+      })();
+    </script>
 
     <!-- HOTEL LINKS -->
     <div class="links">
@@ -172,13 +189,30 @@
     <h2>Lazy Right Restaurant and Bar</h2>
 
     <div class="tour">
-      <script
-        src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/fcec2518"
-        data-width="800"
-        data-height="420">
-      </script>
+      <iframe id="tour-restaurant" name="Lazy Right Restaurant and Bar"
+        src="https://tour.panoee.net/iframe/6a0ec228c47f5233badefff8"
+        frameBorder="0" width="100%" height="400px" scrolling="no"
+        allowvr="yes" allow="vr; xr; accelerometer; gyroscope; autoplay;"
+        allowFullScreen="true" webkitallowfullscreen="true"
+        mozallowfullscreen="true" loading="eager"></iframe>
     </div>
+    <script>
+      (function(){
+        var name = "tour-restaurant";
+        window.addEventListener("devicemotion", function(e){
+          var iframe = document.getElementById(name);
+          if (iframe) iframe.contentWindow.postMessage({
+            type:"devicemotion",
+            deviceMotionEvent:{
+              acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z },
+              accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z },
+              rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma },
+              interval:e.interval, timeStamp:e.timeStamp
+            }
+          }, "*");
+        });
+      })();
+    </script>
 
     <!-- RESTAURANT GOOGLE MAPS -->
     <div class="links">
