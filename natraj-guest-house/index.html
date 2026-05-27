@@ -440,7 +440,7 @@
     </section>
   <script>
     (function () {
-      var TOUR_URL = 'https://tour.panoee.net/iframe/6a0ff7ecfe41f535df754744';
+      var TOUR_URL = 'https://tour.panoee.net/iframe/natraj-guest-house';
       var stage   = document.getElementById('tour-stage-natraj');
       var facade  = stage.querySelector('.tour-facade-btn');
       var iframe  = null;
@@ -449,31 +449,27 @@
       function bindDeviceMotion() {
         if (dmBound) return;
         dmBound = true;
+        var pano_iframe_name = 'tour-embeded';
         window.addEventListener('devicemotion', function (e) {
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({
-            type: 'devicemotion',
-            deviceMotionEvent: {
-              acceleration:             { x: e.acceleration.x,             y: e.acceleration.y,             z: e.acceleration.z             },
-              accelerationIncludingGravity: { x: e.accelerationIncludingGravity.x, y: e.accelerationIncludingGravity.y, z: e.accelerationIncludingGravity.z },
-              rotationRate:             { alpha: e.rotationRate.alpha,      beta: e.rotationRate.beta,        gamma: e.rotationRate.gamma      },
-              interval: e.interval, timeStamp: e.timeStamp
-            }
-          }, '*');
+          var f = document.getElementById(pano_iframe_name);
+          if (f) f.contentWindow.postMessage({ type:'devicemotion', deviceMotionEvent:{ acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z }, accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z }, rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma }, interval:e.interval, timeStamp:e.timeStamp } }, '*');
         });
       }
 
       function buildIframe() {
         if (iframe) return;
         iframe = document.createElement('iframe');
+        iframe.id = 'tour-embeded';
+        iframe.name = 'Natraj Guest House';
         iframe.src = TOUR_URL;
-        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('frameBorder', '0');
         iframe.setAttribute('scrolling', 'no');
         iframe.setAttribute('allowvr', 'yes');
-        iframe.setAttribute('allow', 'vr; xr; accelerometer; gyroscope; autoplay; fullscreen');
-        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.setAttribute('allow', 'vr; xr; accelerometer; gyroscope; autoplay;');
+        iframe.setAttribute('allowFullScreen', 'true');
         iframe.setAttribute('webkitallowfullscreen', 'true');
         iframe.setAttribute('mozallowfullscreen', 'true');
+        iframe.setAttribute('loading', 'eager');
         iframe.className = 'tour-preloading';
         stage.insertBefore(iframe, facade);
       }
