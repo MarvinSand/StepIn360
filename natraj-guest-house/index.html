@@ -200,13 +200,68 @@
       filter: blur(10px);
     }
 
-    .tour-box iframe {
-      width: 100%;
+    .tour-stage {
+      position: relative;
       height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+    }
+    .tour-stage iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       border: none;
       border-radius: 12px;
-      background: #000;
+    }
+    .tour-preloading { visibility: hidden; }
+
+    .tour-facade-btn {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      background: transparent;
+      z-index: 2;
+      transition: opacity 0.35s ease;
+    }
+    .tour-facade-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      border-radius: 12px;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tour-facade-btn:hover img { transform: scale(1.03); }
+
+    .tour-play-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #fff;
+      border-radius: 50px;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      pointer-events: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+      white-space: nowrap;
+    }
+    .tour-facade-btn:hover .tour-play-badge {
+      background: rgba(79, 172, 254, 0.8);
+      transform: translate(-50%, -50%) scale(1.05);
     }
 
     /* LINK CARDS */
@@ -332,7 +387,8 @@
       header { padding: 16px 20px; }
       nav a { margin-left: 16px; }
       .theme-toggle { margin-left: 12px; }
-      .tour-box iframe { height: 360px; }
+      .tour-stage { height: 360px; }
+      .tour-play-badge { padding: 10px 20px; font-size: 13px; }
     }
   </style>
 </head>
@@ -371,15 +427,75 @@
     <!-- MAIN TOUR -->
     <section class="tour-box-wrapper animate-fade-in delay-1">
       <div class="tour-box">
-        <iframe id="tour-main" name="Natraj Guest House"
-          src="https://tour.panoee.net/iframe/6a0ff7ecfe41f535df754744"
-          frameborder="0" scrolling="no"
-          allowvr="yes" allow="vr; xr; accelerometer; gyroscope; autoplay; fullscreen"
-          allowfullscreen="true" webkitallowfullscreen="true"
-          mozallowfullscreen="true" loading="eager">
-        </iframe>
+        <div class="tour-stage" id="tour-stage-natraj">
+          <button class="tour-facade-btn" aria-label="360° Tour von Natraj Guest House starten">
+            <img src="/Images/preview-natraj-guest-house.png" alt="Natraj Guest House — 360° Vorschau" loading="eager" />
+            <div class="tour-play-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Tour öffnen
+            </div>
+          </button>
+        </div>
       </div>
     </section>
+  <script>
+    (function () {
+      var TOUR_URL = 'https://tour.panoee.net/iframe/6a0ff7ecfe41f535df754744';
+      var stage   = document.getElementById('tour-stage-natraj');
+      var facade  = stage.querySelector('.tour-facade-btn');
+      var iframe  = null;
+      var dmBound = false;
+
+      function bindDeviceMotion() {
+        if (dmBound) return;
+        dmBound = true;
+        window.addEventListener('devicemotion', function (e) {
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({
+            type: 'devicemotion',
+            deviceMotionEvent: {
+              acceleration:             { x: e.acceleration.x,             y: e.acceleration.y,             z: e.acceleration.z             },
+              accelerationIncludingGravity: { x: e.accelerationIncludingGravity.x, y: e.accelerationIncludingGravity.y, z: e.accelerationIncludingGravity.z },
+              rotationRate:             { alpha: e.rotationRate.alpha,      beta: e.rotationRate.beta,        gamma: e.rotationRate.gamma      },
+              interval: e.interval, timeStamp: e.timeStamp
+            }
+          }, '*');
+        });
+      }
+
+      function buildIframe() {
+        if (iframe) return;
+        iframe = document.createElement('iframe');
+        iframe.src = TOUR_URL;
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('scrolling', 'no');
+        iframe.setAttribute('allowvr', 'yes');
+        iframe.setAttribute('allow', 'vr; xr; accelerometer; gyroscope; autoplay; fullscreen');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.setAttribute('webkitallowfullscreen', 'true');
+        iframe.setAttribute('mozallowfullscreen', 'true');
+        iframe.className = 'tour-preloading';
+        stage.insertBefore(iframe, facade);
+      }
+
+      if (document.readyState === 'complete') {
+        buildIframe();
+      } else {
+        window.addEventListener('load', buildIframe);
+      }
+
+      facade.addEventListener('click', function () {
+        if (!iframe) buildIframe();
+        facade.style.opacity = '0';
+        facade.style.pointerEvents = 'none';
+        iframe.classList.remove('tour-preloading');
+        bindDeviceMotion();
+        setTimeout(function () {
+          if (facade.parentNode) facade.parentNode.removeChild(facade);
+        }, 350);
+      });
+    }());
+  </script>
 
     <div class="divider"><hr></div>
 
