@@ -72,6 +72,67 @@
       background: #000;
     }
 
+    /* Click-to-load tour facade (saves bandwidth on slow networks) */
+    .tour-facade {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #000;
+      display: block;
+      border: none;
+      padding: 0;
+    }
+    .tour-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tour-facade:hover img { transform: scale(1.03); }
+    .facade-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.15));
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+    .tour-facade:hover .facade-overlay {
+      background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.08));
+    }
+    .play-circle {
+      width: 84px; height: 84px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      box-shadow: 0 10px 35px rgba(0, 242, 254, 0.45);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tour-facade:hover .play-circle { transform: scale(1.1); }
+    .facade-label {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 10px 22px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    @media (max-width: 700px) {
+      .tour-facade { height: 360px; }
+      .play-circle { width: 64px; height: 64px; }
+    }
+
     .offer-section {
       padding: 100px 20px;
       background: var(--surface-main);
@@ -214,16 +275,62 @@
     </div>
   </section>
 
-  <!-- 360 TOUR SHOWCASE -->
+  <!-- 360 TOUR SHOWCASE (click-to-load facade) -->
   <section class="tour-box-wrapper delay-2 animate-fade-in">
     <div class="tour-box">
-      <script src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/9895f769"
-        data-height="500"
-        data-width="100%">
-      </script>
+      <button type="button" class="tour-facade"
+              data-tour="6a0ff7ecfe41f535df754744"
+              aria-label="Load 360° tour of Natraj Guest House">
+        <img src="/Images/preview-natraj-guest-house.jpeg" alt="Natraj Guest House — 360° preview" loading="eager" />
+        <div class="facade-overlay">
+          <div class="play-circle" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+          </div>
+          <span class="facade-label">Click to view in 360°</span>
+        </div>
+      </button>
     </div>
   </section>
+  <script>
+    (function(){
+      var devicemotionBound = false;
+      function bindDeviceMotion(iframeId){
+        if (devicemotionBound) return;
+        devicemotionBound = true;
+        window.addEventListener("devicemotion", function(e){
+          var iframe = document.getElementById(iframeId);
+          if (iframe) iframe.contentWindow.postMessage({
+            type:"devicemotion",
+            deviceMotionEvent:{
+              acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z },
+              accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z },
+              rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma },
+              interval:e.interval, timeStamp:e.timeStamp
+            }
+          }, "*");
+        });
+      }
+      document.querySelectorAll('.tour-facade').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var id = btn.dataset.tour;
+          var iframe = document.createElement('iframe');
+          iframe.id = 'tour-embeded';
+          iframe.name = 'StepIn360 Tour';
+          iframe.src = 'https://tour.panoee.net/iframe/' + id;
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('scrolling', 'no');
+          iframe.setAttribute('allowvr', 'yes');
+          iframe.setAttribute('allow', 'vr; xr; accelerometer; gyroscope; autoplay;');
+          iframe.setAttribute('allowfullscreen', 'true');
+          iframe.setAttribute('webkitallowfullscreen', 'true');
+          iframe.setAttribute('mozallowfullscreen', 'true');
+          iframe.loading = 'eager';
+          btn.replaceWith(iframe);
+          bindDeviceMotion('tour-embeded');
+        });
+      });
+    })();
+  </script>
 
   <!-- OFFERINGS -->
   <section class="offer-section">
