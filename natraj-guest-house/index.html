@@ -3,206 +3,458 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Natraj Guest House – Virtual Tour | StepIn360</title>
+  <title>Natraj Guest House | 360° Virtual Tour | StepIn360</title>
 
-  <meta name="description" content="Explore Natraj Guest House in Trincomalee with a professional 360° virtual tour." />
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore Natraj Guest House in Trincomalee, Sri Lanka with a professional 360° virtual tour. See the rooms — including the Upper Floor — before booking your stay.">
+  <meta name="keywords" content="Natraj Guest House, Trincomalee guest house, Sri Lanka accommodation, 360 virtual tour Trincomalee, StepIn360">
+  <meta name="author" content="StepIn360">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Natraj Guest House | 360° Virtual Tour">
+  <meta property="og:description" content="Take a 360° virtual tour of Natraj Guest House in Trincomalee, Sri Lanka.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.stepin360.net/natraj-guest-house/">
+  <meta property="og:image" content="https://www.stepin360.net/Images/preview-natraj-guest-house.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Natraj Guest House | 360° Virtual Tour">
+  <meta name="twitter:description" content="Explore Natraj Guest House with a 360° immersive experience.">
+  <meta name="twitter:image" content="https://www.stepin360.net/Images/preview-natraj-guest-house.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script src="../theme.js?v=3"></script>
 
   <style>
+    :root {
+      --bg-color: #05070d;
+      --surface-main: #111827;
+      --surface-secondary: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #1f2937;
+      --primary-glow: rgba(79, 172, 254, 0.3);
+      --primary-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --glass-bg: rgba(11, 15, 25, 0.7);
+    }
+
+    :root[data-theme="light"] {
+      --bg-color: #ffffff;
+      --surface-main: #f3f4f6;
+      --surface-secondary: #e5e7eb;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #d1d5db;
+      --glass-bg: rgba(255, 255, 255, 0.75);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #000;
-      color: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* HEADER */
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+    h1, h2, h3 { font-weight: 700; line-height: 1.2; }
+
+    .text-gradient {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* HEADER (Glassmorphism) */
     header {
-      background: #000;
-      padding: 18px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #111;
+      position: fixed; top: 0; left: 0; width: 100%;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 100;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    header a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
+    :root[data-theme="light"] header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 
-    .nav-right {
-      display: flex;
-      gap: 30px;
+    .logo {
+      font-size: 24px; font-weight: 800; letter-spacing: -0.5px;
+      display: flex; align-items: center; gap: 8px;
+      color: var(--text-main);
     }
 
-    /* CONTENT */
-    .container {
-      max-width: 1100px;
-      margin: 70px auto;
-      padding: 0 20px;
-      text-align: center;
+    .logo span {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 12px;
+    nav { display: flex; align-items: center; }
+
+    nav a {
+      margin-left: 32px; font-weight: 500; font-size: 15px;
+      color: var(--text-muted);
     }
 
-    .subtitle {
-      font-size: 18px;
-      color: #bbb;
-      margin-bottom: 45px;
-    }
+    nav a:hover { color: var(--text-main); }
 
-    .tour {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 55px;
-    }
-
-    /* LINKS */
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 45px;
-      flex-wrap: wrap;
-    }
-
-    .links a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .links a:hover {
-      transform: scale(1.06);
-      opacity: 0.85;
-    }
-
-    .links img {
-      height: 42px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 28px;
-      }
-    }
-
-    /* Theme toggle (in header) */
     .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
       width: 38px; height: 38px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: inherit;
       display: inline-flex; align-items: center; justify-content: center;
+      margin-left: 24px;
       cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: var(--transition);
       padding: 0;
     }
-    .theme-toggle:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.3); }
-    .theme-toggle:focus-visible { outline: 2px solid #4facfe; outline-offset: 2px; }
-
-    .nav-right { align-items: center; }
-
-    /* Light mode overrides */
-    :root[data-theme="light"] body { background: #f8f8f8; color: #1a1a1a; }
-    :root[data-theme="light"] header { background: #ffffff; border-bottom: 1px solid #e5e7eb; }
-    :root[data-theme="light"] header a { color: #1a1a1a; }
-    :root[data-theme="light"] .subtitle { color: #475569; }
-    :root[data-theme="light"] .links a { color: #1a1a1a; }
-    :root[data-theme="light"] footer { color: #6b7280; }
-    :root[data-theme="light"] .theme-toggle {
-      background: rgba(0,0,0,0.05);
-      border-color: rgba(0,0,0,0.12);
+    .theme-toggle:hover {
+      border-color: #4facfe; color: #4facfe;
+      transform: translateY(-1px);
     }
-    :root[data-theme="light"] .theme-toggle:hover { border-color: rgba(0,0,0,0.25); }
+    .theme-toggle:focus-visible {
+      outline: 2px solid #4facfe; outline-offset: 2px;
+    }
+
+    /* PAGE */
+    .page-wrapper { padding-top: 100px; }
+
+    /* HERO */
+    .hero {
+      padding: 60px 20px 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* SECTION HEADING (Upper Floor) */
+    .section-heading {
+      text-align: center;
+      padding: 40px 20px 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-heading h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      letter-spacing: -0.5px;
+    }
+    .section-heading p {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
+    /* TOUR BOX — curved corners + subtle gradient glow */
+    .tour-box-wrapper {
+      max-width: 1000px;
+      margin: 30px auto 50px;
+      padding: 0 20px;
+    }
+
+    .tour-box {
+      background: var(--surface-main);
+      padding: 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 242, 254, 0.05);
+      position: relative;
+    }
+
+    .tour-box::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: var(--primary-gradient);
+      z-index: -1;
+      border-radius: 22px;
+      opacity: 0.12;
+      filter: blur(10px);
+    }
+
+    .tour-box iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      background: #000;
+      display: block;
+    }
+
+    /* LINK CARDS */
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .link-card {
+      background: var(--surface-secondary);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 15px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(79, 172, 254, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .link-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 50%; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.04), transparent);
+      transform: skewX(-20deg);
+      transition: 0.6s;
+    }
+    .link-card:hover::after { left: 150%; }
+
+    .link-card img {
+      width: 48px; height: 48px;
+      object-fit: contain;
+    }
+
+    /* DIVIDER between sections */
+    .divider {
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 0 20px;
+    }
+    .divider hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-top: 1px solid var(--border-color);
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner h2 { font-size: 22px; }
+
+    .footer-contact {
+      display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;
+    }
+
+    .footer-contact a {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--text-muted); font-weight: 500;
+    }
+
+    .footer-contact a:hover { color: var(--text-main); }
+
+    .footer-copy { font-size: 14px; color: #64748b; }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 60px; height: 60px;
+      background: #25D366; color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 99;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      animation: pulseFloat 2s infinite ease-in-out alternate;
+    }
+    @keyframes pulseFloat {
+      0%   { transform: translateY(0);    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
+      100% { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5); }
+    }
+    .whatsapp-float:hover { animation: none; transform: scale(1.1); }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      header { padding: 16px 20px; }
+      nav a { margin-left: 16px; }
+      .theme-toggle { margin-left: 12px; }
+      .tour-box iframe { height: 360px; }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <a href="/">StepIn360</a>
+  <header>
+    <a href="https://www.stepin360.net" class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <defs>
+          <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00f2fe" />
+            <stop offset="100%" stop-color="#4facfe" />
+          </linearGradient>
+        </defs>
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+        <path d="M2 12h20"></path>
+      </svg>
+      Step<span>In</span>360
+    </a>
+    <nav>
+      <a href="https://www.stepin360.net/examples">Examples</a>
+      <a href="https://www.stepin360.net/contact">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
+    </nav>
+  </header>
 
-  <div class="nav-right">
-    <a href="/examples.html">Examples</a>
-    <a href="/contact.html">Contact</a>
-    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  <div class="page-wrapper">
+
+    <section class="hero animate-fade-in">
+      <h1><span class="text-gradient">Natraj</span> Guest House</h1>
+      <p>Explore the guest house with an immersive 360° virtual tour — step inside and see the rooms before you book your stay in Trincomalee, Sri Lanka.</p>
+    </section>
+
+    <!-- MAIN TOUR -->
+    <section class="tour-box-wrapper animate-fade-in delay-1">
+      <div class="tour-box">
+        <iframe id="tour-main" name="Natraj Guest House"
+          src="https://tour.panoee.net/iframe/6a0ff7ecfe41f535df754744"
+          frameBorder="0" scrolling="no"
+          allowvr="yes" allow="vr; xr; accelerometer; gyroscope; autoplay;"
+          allowFullScreen="true" webkitallowfullscreen="true"
+          mozallowfullscreen="true" loading="eager"></iframe>
+      </div>
+    </section>
+
+    <div class="divider"><hr></div>
+
+    <!-- UPPER FLOOR SECTION -->
+    <section class="section-heading">
+      <h2><span class="text-gradient">Upper Floor</span> — Rooms 10 &amp; 11</h2>
+      <p>Take a closer look at the two upper-floor rooms in a separate 360° tour.</p>
+    </section>
+
+    <section class="tour-box-wrapper">
+      <div class="tour-box">
+        <script
+          src="https://teliportme.com/js/embed.js"
+          data-teliportme="https://teliportme.com/embed/tour/e847bd19/2532438"
+          data-width="100%"
+          data-height="500">
+        </script>
+      </div>
+    </section>
+
+    <!-- BOOKING / TRIP / MAPS LINKS -->
+    <section class="links animate-fade-in delay-2">
+      <a class="link-card" href="https://www.booking.com/Share-udtn2Y" target="_blank" rel="noopener">
+        <img src="/Images/Booking.png" alt="Booking.com">
+        Book on Booking.com
+      </a>
+      <a class="link-card" href="https://www.trip.com/w/QEJZxpDwIT2" target="_blank" rel="noopener">
+        <img src="/Images/Trip.png" alt="Trip.com">
+        Book on Trip.com
+      </a>
+      <a class="link-card" href="https://share.google/NaLdjw4ZmSTAXHWDb" target="_blank" rel="noopener">
+        <img src="/Images/googlemaps.png" alt="Google Maps">
+        View on Google Maps
+      </a>
+    </section>
+
   </div>
-</header>
 
-<div class="container">
-  <h1>Natraj Guest House</h1>
-  <p class="subtitle">
-    Explore the guest house with a 360° virtual tour and see the rooms before booking.
-  </p>
-
-  <!-- Main Tour -->
-  <div class="tour">
-    <script
-      src="https://teliportme.com/js/embed.js"
-      data-teliportme="https://teliportme.com/embed/tour/9895f769"
-      data-width="800"
-      data-height="420">
-    </script>
-  </div>
-
-  <!-- Rooms 10 & 11 -->
-  <section style="margin-top:60px;">
-    <h2 style="text-align:center; font-size:28px; margin-bottom:16px;">
-      Upper Floor – Rooms 10 &amp; 11
-    </h2>
-
-    <div class="tour">
-      <script
-        src="https://teliportme.com/js/embed.js"
-        data-teliportme="https://teliportme.com/embed/tour/e847bd19/2532438"
-        data-width="800"
-        data-height="420">
-      </script>
+  <footer>
+    <div class="footer-inner">
+      <h2>StepIn360</h2>
+      <div class="footer-contact">
+        <a href="mailto:contact@stepin360.net">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          contact@stepin360.net
+        </a>
+        <a href="https://wa.me/4917673533365" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          +49 176 73533365
+        </a>
+      </div>
+      <div class="footer-copy">© 2026 StepIn360 — Elevated Virtual Tours for Businesses.</div>
     </div>
-  </section>
-</div>
-  
-  <div class="links">
-    <a href="https://www.booking.com/Share-udtn2Y" target="_blank">
-      <img src="/Images/Booking.png" alt="Booking.com">
-      Booking.com
-    </a>
+  </footer>
 
-    <a href="https://www.trip.com/w/QEJZxpDwIT2" target="_blank">
-      <img src="/Images/Trip.png" alt="Trip.com">
-      Trip.com
-    </a>
+  <a href="https://wa.me/4917673533365" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
 
-    <a href="https://share.google/NaLdjw4ZmSTAXHWDb" target="_blank">
-      <img src="/Images/googlemaps.png" alt="Google Maps">
-      Google Maps
-    </a>
-  </div>
-</div>
-
-<footer>
-  © 2026 StepIn360 · Virtual Tours that increase bookings
-</footer>
+  <script>
+    (function(){
+      var name = "tour-main";
+      window.addEventListener("devicemotion", function(e){
+        var iframe = document.getElementById(name);
+        if (iframe) iframe.contentWindow.postMessage({
+          type:"devicemotion",
+          deviceMotionEvent:{
+            acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z },
+            accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z },
+            rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma },
+            interval:e.interval, timeStamp:e.timeStamp
+          }
+        }, "*");
+      });
+    })();
+  </script>
 
 </body>
 </html>
