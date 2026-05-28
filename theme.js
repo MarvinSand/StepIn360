@@ -47,6 +47,35 @@
       }
     }
     updateThemeToggleIcons(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    var navToggle = document.querySelector('.nav-toggle');
+    if (navToggle && !navToggle.dataset.navBound) {
+      navToggle.dataset.navBound = '1';
+      var nav = document.querySelector('nav');
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-label', 'Open menu');
+      }
+
+      navToggle.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      });
+
+      var links = nav.querySelectorAll('a');
+      for (var j = 0; j < links.length; j++) {
+        links[j].addEventListener('click', closeMenu);
+      }
+
+      document.addEventListener('click', function (e) {
+        if (!nav.contains(e.target) && e.target !== navToggle && !navToggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    }
   }
 
   applyTheme(getInitialTheme());
