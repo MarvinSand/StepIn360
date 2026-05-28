@@ -192,6 +192,71 @@
       display: block;
     }
 
+    /* TOUR STAGE (Click-to-Load Preview) */
+    .tour-stage {
+      position: relative;
+      height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+    }
+    .tour-stage iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+    .tour-preloading { visibility: hidden; }
+
+    .tour-facade-btn {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      background: transparent;
+      z-index: 2;
+      transition: opacity 0.35s ease;
+    }
+    .tour-facade-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tour-facade-btn:hover img { transform: scale(1.03); }
+
+    .tour-play-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #fff;
+      border-radius: 50px;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      pointer-events: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+      white-space: nowrap;
+    }
+    .tour-facade-btn:hover .tour-play-badge {
+      background: rgba(79, 172, 254, 0.8);
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
     /* LINK CARDS */
     .links {
       display: grid;
@@ -304,6 +369,8 @@
       nav a { margin-left: 16px; }
       .theme-toggle { margin-left: 12px; }
       .tour-box iframe { height: 360px; }
+      .tour-stage { height: 360px; }
+      .tour-play-badge { padding: 10px 20px; font-size: 13px; }
     }
   </style>
 </head>
@@ -341,14 +408,71 @@
 
     <section class="tour-box-wrapper animate-fade-in delay-1">
       <div class="tour-box">
-        <iframe id="tour-embeded" name="Sithujaya Green Mirissa"
-          src="https://tour.panoee.net/iframe/6a07df1e7732c728f7b90a70"
-          frameBorder="0" scrolling="no"
-          allowvr="yes" allow="vr; xr; accelerometer; gyroscope; autoplay;"
-          allowFullScreen="false" webkitallowfullscreen="false"
-          mozallowfullscreen="false" loading="eager"></iframe>
+        <div class="tour-stage" id="tour-stage-sithujaya">
+          <button class="tour-facade-btn" aria-label="360° Tour von Sithujaya Green Mirissa starten">
+            <img src="/Images/preview-sithujaya-green.png" alt="Sithujaya Green Mirissa — 360° Vorschau" loading="eager" />
+            <div class="tour-play-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Tour öffnen
+            </div>
+          </button>
+        </div>
       </div>
     </section>
+    <script>
+      (function () {
+        var TOUR_URL = 'https://tour.panoee.net/iframe/6a07df1e7732c728f7b90a70';
+        var stage   = document.getElementById('tour-stage-sithujaya');
+        var facade  = stage.querySelector('.tour-facade-btn');
+        var iframe  = null;
+        var dmBound = false;
+
+        function bindDeviceMotion() {
+          if (dmBound) return;
+          dmBound = true;
+          var pano_iframe_name = 'tour-embeded';
+          window.addEventListener('devicemotion', function (e) {
+            var f = document.getElementById(pano_iframe_name);
+            if (f) f.contentWindow.postMessage({ type:'devicemotion', deviceMotionEvent:{ acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z }, accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z }, rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma }, interval:e.interval, timeStamp:e.timeStamp } }, '*');
+          });
+        }
+
+        function buildIframe() {
+          if (iframe) return;
+          iframe = document.createElement('iframe');
+          iframe.id = 'tour-embeded';
+          iframe.name = 'Sithujaya Green Mirissa';
+          iframe.src = TOUR_URL;
+          iframe.setAttribute('frameBorder', '0');
+          iframe.setAttribute('scrolling', 'no');
+          iframe.setAttribute('allowvr', 'yes');
+          iframe.setAttribute('allow', 'vr; xr; accelerometer; gyroscope; autoplay;');
+          iframe.setAttribute('allowFullScreen', 'true');
+          iframe.setAttribute('webkitallowfullscreen', 'true');
+          iframe.setAttribute('mozallowfullscreen', 'true');
+          iframe.setAttribute('loading', 'eager');
+          iframe.className = 'tour-preloading';
+          stage.insertBefore(iframe, facade);
+        }
+
+        if (document.readyState === 'complete') {
+          buildIframe();
+        } else {
+          window.addEventListener('load', buildIframe);
+        }
+
+        facade.addEventListener('click', function () {
+          if (!iframe) buildIframe();
+          facade.style.opacity = '0';
+          facade.style.pointerEvents = 'none';
+          iframe.classList.remove('tour-preloading');
+          bindDeviceMotion();
+          setTimeout(function () {
+            if (facade.parentNode) facade.parentNode.removeChild(facade);
+          }, 350);
+        });
+      }());
+    </script>
 
     <section class="links animate-fade-in delay-2">
       <a class="link-card" href="https://www.booking.com/Share-HELiS8r" target="_blank" rel="noopener">
@@ -383,22 +507,6 @@
   <a href="https://wa.me/4917673533365" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
   </a>
-
-  <script>
-    var pano_iframe_name = "tour-embeded";
-    window.addEventListener("devicemotion", function(e){
-      var iframe = document.getElementById(pano_iframe_name);
-      if (iframe) iframe.contentWindow.postMessage({
-        type:"devicemotion",
-        deviceMotionEvent:{
-          acceleration:{ x:e.acceleration.x, y:e.acceleration.y, z:e.acceleration.z },
-          accelerationIncludingGravity:{ x:e.accelerationIncludingGravity.x, y:e.accelerationIncludingGravity.y, z:e.accelerationIncludingGravity.z },
-          rotationRate:{ alpha:e.rotationRate.alpha, beta:e.rotationRate.beta, gamma:e.rotationRate.gamma },
-          interval:e.interval, timeStamp:e.timeStamp
-        }
-      }, "*");
-    });
-  </script>
 
 </body>
 </html>
