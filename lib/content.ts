@@ -155,3 +155,47 @@ export const contact = {
   whatsapp: "https://wa.me/4917673533365",
   formAction: "https://formsubmit.co/contact@stepin360.net",
 };
+
+// Standalone landing page for the Natraj Guest House — shows only the 360° tour
+// and the booking links. Replace the placeholder URLs below with the real
+// listing links once they are available.
+export const natrajPage = {
+  // The tour shown on this page (matches the `natraj-guest-house` entry in `tours`).
+  tourId: "natraj-guest-house",
+  // Booking destinations. Set `url` to "" to hide a button.
+  bookings: [
+    {
+      id: "booking",
+      label: { de: "Auf Booking.com buchen", en: "Book on Booking.com" },
+      // TODO: replace with the real Natraj Guest House listing URL
+      url: "https://www.booking.com/",
+    },
+    {
+      id: "airbnb",
+      label: { de: "Auf Airbnb buchen", en: "Book on Airbnb" },
+      // TODO: replace with the real Natraj Guest House listing URL
+      url: "https://www.airbnb.com/",
+    },
+    {
+      id: "whatsapp",
+      label: { de: "Direkt per WhatsApp buchen", en: "Book directly on WhatsApp" },
+      url: `${contact.whatsapp}?text=${encodeURIComponent(
+        "Hi! I'd like to book a stay at Natraj Guest House."
+      )}`,
+    },
+    {
+      id: "email",
+      label: { de: "Per E-Mail anfragen", en: "Enquire by email" },
+      url: `mailto:${contact.email}?subject=${encodeURIComponent("Natraj Guest House — Booking enquiry")}`,
+    },
+  ],
+  ui: {
+    eyebrow: { de: "360°-Tour & Buchung", en: "360° Tour & Booking" },
+    sub: {
+      de: "Sieh dich in 360° um – und buche deinen Aufenthalt direkt über einen der Links unten.",
+      en: "Look around in 360° — then book your stay directly through one of the links below.",
+    },
+    bookingHeading: { de: "Jetzt buchen", en: "Book now" },
+    backToSite: { de: "Mehr von StepIn360", en: "More from StepIn360" },
+  },
+};
