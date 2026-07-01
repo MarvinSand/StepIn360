@@ -167,14 +167,17 @@ export const natrajPage = {
     {
       id: "booking",
       label: { de: "Auf Booking.com buchen", en: "Book on Booking.com" },
-      // TODO: replace with the real Natraj Guest House listing URL
-      url: "https://www.booking.com/",
+      url: "https://www.booking.com/Share-KMGPWl",
     },
     {
-      id: "airbnb",
-      label: { de: "Auf Airbnb buchen", en: "Book on Airbnb" },
-      // TODO: replace with the real Natraj Guest House listing URL
-      url: "https://www.airbnb.com/",
+      id: "agoda",
+      label: { de: "Auf Agoda buchen", en: "Book on Agoda" },
+      url: "https://www.agoda.com/sp/Tdmajnr3FHC",
+    },
+    {
+      id: "google",
+      label: { de: "Auf Google ansehen", en: "View on Google" },
+      url: "https://share.google/hEkFmQHfo3Q538ofJ",
     },
     {
       id: "whatsapp",
