@@ -179,18 +179,6 @@ export const natrajPage = {
       label: { de: "Auf Google ansehen", en: "View on Google" },
       url: "https://share.google/hEkFmQHfo3Q538ofJ",
     },
-    {
-      id: "whatsapp",
-      label: { de: "Direkt per WhatsApp buchen", en: "Book directly on WhatsApp" },
-      url: `${contact.whatsapp}?text=${encodeURIComponent(
-        "Hi! I'd like to book a stay at Natraj Guest House."
-      )}`,
-    },
-    {
-      id: "email",
-      label: { de: "Per E-Mail anfragen", en: "Enquire by email" },
-      url: `mailto:${contact.email}?subject=${encodeURIComponent("Natraj Guest House — Booking enquiry")}`,
-    },
   ],
   ui: {
     eyebrow: { de: "360°-Tour & Buchung", en: "360° Tour & Booking" },
